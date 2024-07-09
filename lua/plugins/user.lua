@@ -17,8 +17,14 @@ return {
           dark = "mocha",
         },
       })
-      vim.cmd.colorscheme("catppuccin")
+      --vim.cmd.colorscheme("catpuccin")
     end,
+  },
+  { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
+  --vim.cmd.colorscheme("catppuccin")
+  --require('leap').create_default_mappings()
+  {
+    "ggandor/leap.nvim",
   },
 
   {

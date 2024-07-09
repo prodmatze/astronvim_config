@@ -7,11 +7,11 @@ return {
         -- General mappings
         i = {
           -- In Insert mode, pressing 'ff' will switch to Visual mode
-          ["ff"] = { "<ESC>v", desc = "Switch to Visual mode" },
+          ["FF"] = { "<ESC>v", desc = "Switch to Visual mode" },
         },
         n = {
           -- In Normal mode, pressing 'ff' will switch to Visual mode
-          ["ff"] = { "v", desc = "Switch to Visual mode" },
+          ["FF"] = { "v", desc = "Switch to Visual mode" },
           -- Navigate vim panes better
           ["<c-k>"] = { ":wincmd k<CR>", desc = "Move to pane up" },
           ["<c-j>"] = { ":wincmd j<CR>", desc = "Move to pane down" },
@@ -21,6 +21,11 @@ return {
           ["<leader>h"] = { ":nohlsearch<CR>", desc = "Clear search highlight" },
           -- Open file explorer with Ctrl-n
           ["<c-n>"] = { ":Neotree toggle<CR>", desc = "Toggle file explorer" },
+
+          -- nvim leap keybinds
+          vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)'),
+          vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)'),
+          vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)'),
         },
       },
     },
