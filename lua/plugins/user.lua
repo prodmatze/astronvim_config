@@ -20,7 +20,13 @@ return {
       --vim.cmd.colorscheme("catpuccin")
     end,
   },
-  { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
+  {
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
+},
+  { "EdenEast/nightfox.nvim" },
   --vim.cmd.colorscheme("catppuccin")
   --require('leap').create_default_mappings()
   {

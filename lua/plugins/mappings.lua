@@ -26,6 +26,7 @@ return {
           vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)'),
           vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)'),
           vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)'),
+          vim.api.nvim_set_keymap('i', '<C-j>', '<ESC>', { noremap = true, silent = true, desc = "switch to normal mode" }),
         },
       },
     },
