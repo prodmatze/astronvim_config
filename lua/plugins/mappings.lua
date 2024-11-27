@@ -92,4 +92,41 @@ return {
       })
     end,
   },
+-- ~/.config/nvim/lua/user/mappings.lua
+
+  -- Existing plugin configurations...
+
+  -- Add ChatGPT key mappings using the new which-key spec
+  {
+    "which-key.nvim", -- Ensure which-key is installed
+    config = function()
+      local wk = require("which-key")
+
+      wk.register({
+        ["<leader>k"] = { name = "ChatGPT" }, -- Group prefix
+
+        -- ChatGPT Commands
+        ["<leader>kc"] = { "<cmd>ChatGPT<CR>", "Open ChatGPT" },
+        ["<leader>ke"] = { "<cmd>ChatGPTEditWithInstructions<CR>", "Edit with Instructions", mode = { "n", "v" } },
+        ["<leader>kg"] = { "<cmd>ChatGPTRun grammar_correction<CR>", "Grammar Correction", mode = { "n", "v" } },
+        ["<leader>kt"] = { "<cmd>ChatGPTRun translate<CR>", "Translate", mode = { "n", "v" } },
+        ["<leader>kk"] = { "<cmd>ChatGPTRun keywords<CR>", "Keywords", mode = { "n", "v" } },
+        ["<leader>kd"] = { "<cmd>ChatGPTRun docstring<CR>", "Docstring", mode = { "n", "v" } },
+        ["<leader>ka"] = { "<cmd>ChatGPTRun add_tests<CR>", "Add Tests", mode = { "n", "v" } },
+        ["<leader>ko"] = { "<cmd>ChatGPTRun optimize_code<CR>", "Optimize Code", mode = { "n", "v" } },
+        ["<leader>ks"] = { "<cmd>ChatGPTRun summarize<CR>", "Summarize", mode = { "n", "v" } },
+        ["<leader>kf"] = { "<cmd>ChatGPTRun fix_bugs<CR>", "Fix Bugs", mode = { "n", "v" } },
+        ["<leader>kx"] = { "<cmd>ChatGPTRun explain_code<CR>", "Explain Code", mode = { "n", "v" } },
+        ["<leader>kr"] = { "<cmd>ChatGPTRun roxygen_edit<CR>", "Roxygen Edit", mode = { "n", "v" } },
+        ["<leader>kl"] = { "<cmd>ChatGPTRun code_readability_analysis<CR>", "Code Readability Analysis", mode = { "n", "v" } },
+      }, {
+        mode = "n",          -- Normal mode
+        prefix = "",         -- No prefix because keys include <leader>
+        silent = true,
+        noremap = true,
+        nowait = true,
+      })
+    end,
+  },
 }
+
